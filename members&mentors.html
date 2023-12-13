@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CPC Chorale</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Playball&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Quicksand", sans-serif;
+      text-decoration: none;
+      list-style: none;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --bg-color: #1c3b4d;
+      --text-color: #ffffff;
+      --second-color: #b4dcf5;
+      --main-color: #232a30;
+      --big-font: 6rem;
+      --h2-font: 3rem;
+      --p-font: 1.1rem;
+    }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      background: transparent;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      display: flex;
+      margin-bottom: 50px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .navbar-brand {
+      position: relative;
+      margin-left: 190px;
+      margin-right: 140px;
+    }
+    .nav-link {
+      background-size: cover;
+      margin-right: 20px;
+      margin-left: 20px;
+      color: rgb(230, 217, 217);
+      text-transform: uppercase;
+      font-size: bold;
+      font-family: "Quicksand", sans-serif;
+      text-decoration: none;
+      transition: ease 0.4s;
+      font-weight: 500;
+      width: 100%;
+      text-align: center;
+    }
+    .nav-link:hover {
+      background: #b4dcf5;
+      transform: scale(1.1);
+      color: #232a30;
+      border-radius: 50px;
+      box-shadow: 5px 5px 15px rgba(49, 80, 221, 0.2);
+    }
+    .nav-link.active {
+      background-color: #f7f9fa;
+      color: var(--second-color);
+      border-radius: 50px;
+      margin-right: 60px;
+      width: 100%;
+      text-align: center;
+    }
+    .nav-link.active:hover {
+      background-color: #934ed3;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(17, 81, 113, 0.7);
+      transform: scale(1.1);
+    }
+    .dropdown-menu {
+      border-radius: 30px;
+      text-align: center;
+    }
+    .dropdown-menu a {
+      font-family: "Quicksand", sans-serif;
+      display: block;
+      width: 100%;
+    }
+    .dropdown-menu a:hover {
+      transform: scale(1.1);
+      color: #115171;
+      border-radius: 50px;
+      background: var(--second-color);
+    }
+    section {
+      padding: 150px 18%;
+    }
+    .card-margin {
+      margin: 60px;
+    }
+    .card {
+      flex: 1;
+      margin: 0 10px; /* Adjust the margin values as needed */
+    }
+  </style>
+
+  <style>
+    body {
+      background: #6a11cb;
+      background: -webkit-linear-gradient(
+        to right,
+        rgba(106, 17, 203, 1),
+        rgba(37, 117, 252, 1)
+      );
+      background: linear-gradient(
+        to right,
+        rgba(106, 17, 203, 1),
+        rgba(37, 117, 252, 1)
+      );
+    }
+  </style>
+
+  <body>
+    <!--navbar-->
+
+    <nav class="navbar navbar-expand-lg" id="myNavbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/CPC-Logo.png" alt="Logo" width="200" height="90" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="news&updates.html">News & Updates</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="members&mentors.html"
+                >Members & Mentors</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Account
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--members&mentors-->
+
+    <section class="members&mentors" id="members&mentors">
+      <div class="card-deck">
+        <div class="card first-card">
+          <div class="container mt-3 mb-3">
+            <img class="card-img-top" src="img/cover.jpg" alt="..." />
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/pat.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">John Patrick Meneses</h5>
+                <p class="card-text">
+                  Patrick is a 20-year-old third-year student studying for a
+                  Bachelor of Science in Information Technology.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/joana.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Joana Nuñez</h5>
+                <p class="card-text">
+                  Joana is a 20-year-old third-year student studying for a
+                  Bachelor of Science in Civil Engineering.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/dahlia.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Dahlia Anazario</h5>
+                <p class="card-text">
+                  Dahlia is a 21-year-old first-year student studying for a
+                  Bachelor of Science in Information Technology.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/aj.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Aj Consquejo</h5>
+                <p class="card-text">
+                  AJ is a 18-year-old first-year student studying for a Bachelor
+                  of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/ein.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Ein Sanguillosa</h5>
+                <p class="card-text">
+                  Ein is a 20-year-old second-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/alyssa.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Alyssa Fatama Agana</h5>
+                <p class="card-text">
+                  Alyssa is a 21-year-old third-year student studying for a
+                  Bachelor of Science in Civil Engineering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/bea.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Bea Manansala</h5>
+                <p class="card-text">
+                  Bea is a 18-year-old first-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/sugar.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Sugar Jen Dela Torre</h5>
+                <p class="card-text">
+                  Sugar is a 18-year-old first-year student studying for a
+                  Bachelor of Science in Tourism Management.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/trisha.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Trisha Lutero</h5>
+                <p class="card-text">
+                  Trisha is a 18-year-old first-year student studying for a
+                  Bachelor of Science in Business Administration Major in
+                  Financial Management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/john marc.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">John Marc Borgonia</h5>
+                <p class="card-text">
+                  JM is a 21-year-old second-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/mitziyori.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Mitziyori Celoso</h5>
+                <p class="card-text">
+                  Mitzi is a 19-year-old first-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/niccolo.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Florence Niccolo Almario</h5>
+                <p class="card-text">
+                  Florence is a 26-year-old first-year student studying for a
+                  Bachelor of Science in Hospitality Management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/marnier.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Marnier Cervales</h5>
+                <p class="card-text">
+                  Marnier is a 22-year-old fourth-year student studying for a
+                  Bachelor of Science in Business Administration Major in
+                  Financial Management.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/krystalie.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Krystalie Dadivas</h5>
+                <p class="card-text">
+                  Krystalie is a 21-year-old third-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/lindon.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Lindon Andrad</h5>
+                <p class="card-text">
+                  Lindon is a 19-year-old second-year student studying for a
+                  Bachelor of Science in Business Administration Major in
+                  Marketing Management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/marson.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Marson Mateos</h5>
+                <p class="card-text">
+                  Marson is a 21-year-old fourth-year student studying for a
+                  Bachelor of Science in Psychology.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/charles.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Charles Leonard Besa</h5>
+                <p class="card-text">
+                  Charles is a 22-year-old fourth-year student studying for a
+                  Bachelor of Science in Electrical Engineering.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/cj.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Christian Jay Dequita</h5>
+                <p class="card-text">
+                  CJ is a 20-year-old third-year student studying for a Bachelor
+                  of Science in Civil Engineering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/marry angel.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Marry Angel Dolorota</h5>
+                <p class="card-text">
+                  Marry is a 20-year-old third-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/allan.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Allan Jeorge Valiente</h5>
+                <p class="card-text">
+                  Allan is a 20-year-old second-year student studying for a
+                  Bachelor of Science in Psychology.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/ken.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Ken Lata</h5>
+                <p class="card-text">
+                  Ken is a 20-year-old second-year student studying for a
+                  Bachelor of Science in Business Administration Major in
+                  Marketing Management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-deck"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          "
+        >
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/ashley.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Ashley Joy Dorde</h5>
+                <p class="card-text">
+                  Ashley is a 22-year-old third-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex: 1">
+            <div class="container mt-5 mb-3">
+              <img class="card-img-top" src="img/mark lawrence.jpg" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Mark Lawrence Dasig</h5>
+                <p class="card-text">
+                  Mark is a 22-year-old fourth-year student studying for a
+                  Bachelor of Science in Accountancy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+    <p class="text-center">Copyright ©2023 All rights reserved</p>
+
+    <script>
+      let prevScrollpos = window.pageYOffset;
+
+      window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+        const navbar = document.getElementById("myNavbar");
+
+        if (prevScrollpos > currentScrollPos) {
+          // Scroll up
+          navbar.style.height = "120px";
+          navbar.style.opacity = "1";
+        } else {
+          // Scroll down
+          navbar.style.height = "0";
+          navbar.style.opacity = "0";
+        }
+
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+  </body>
+</html>

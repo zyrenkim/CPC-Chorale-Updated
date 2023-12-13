@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CPC Chorale</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Playball&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Quicksand", sans-serif;
+      text-decoration: none;
+      list-style: none;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --bg-color: #1c3b4d;
+      --text-color: #ffffff;
+      --second-color: #b4dcf5;
+      --main-color: #232a30;
+      --big-font: 6rem;
+      --h2-font: 3rem;
+      --p-font: 1.1rem;
+    }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      background: transparent;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      display: flex;
+      margin-bottom: 50px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .navbar-brand {
+      position: relative;
+      margin-left: 190px;
+      margin-right: 140px;
+    }
+    .nav-link {
+      background-size: cover;
+      margin-right: 20px;
+      margin-left: 20px;
+      color: rgb(230, 217, 217);
+      text-transform: uppercase;
+      font-size: bold;
+      font-family: "Quicksand", sans-serif;
+      text-decoration: none;
+      transition: ease 0.4s;
+      font-weight: 500;
+      width: 100%;
+      text-align: center;
+    }
+    .nav-link:hover {
+      background: #b4dcf5;
+      transform: scale(1.1);
+      color: #232a30;
+      border-radius: 50px;
+      box-shadow: 5px 5px 15px rgba(49, 80, 221, 0.2);
+    }
+    .nav-link.active {
+      background-color: #f7f9fa;
+      color: var(--second-color);
+      border-radius: 50px;
+      margin-right: 60px;
+      width: 100%;
+      text-align: center;
+    }
+    .nav-link.active:hover {
+      background-color: #115171;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(17, 81, 113, 0.7);
+      transform: scale(1.1);
+    }
+    .dropdown-menu {
+      border-radius: 30px;
+      text-align: center;
+    }
+    .dropdown-menu a {
+      font-family: "Quicksand", sans-serif;
+      display: block;
+      width: 100%;
+    }
+    .dropdown-menu a:hover {
+      transform: scale(1.1);
+      color: #115171;
+      border-radius: 50px;
+      background: var(--second-color);
+    }
+    section {
+      padding: 150px 18%;
+    }
+    .card-margin {
+      margin: 60px;
+    }
+    .card {
+      flex: 1;
+      margin: 0 10px; /* Adjust the margin values as needed */
+    }
+  </style>
+
+  <style>
+    body {
+      background: #6a11cb;
+      background: -webkit-linear-gradient(
+        to right,
+        rgba(106, 17, 203, 1),
+        rgba(37, 117, 252, 1)
+      );
+      background: linear-gradient(
+        to right,
+        rgba(106, 17, 203, 1),
+        rgba(37, 117, 252, 1)
+      );
+    }
+  </style>
+
+  <body>
+    <!--navbar-->
+
+    <nav class="navbar navbar-expand-lg" id="myNavbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/CPC-PhotoRoom (3).png" alt="Logo" width="200" height="90" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="news&updates.html">News & Updates</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="members&mentors.html"
+                >Members & Mentors</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Account
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="signin.html">Sign-in</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     <!--News and Updates-->
+     <div class="container mt-3 mb-3">
+     <div class="row justify-content-center">
+      <div class="col">
+      <id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="height: 400px; width:700px">
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="img/Chorale1.jpg" class="d-block w-100 img-fluid" alt="..." style="height: 400px; object-fit: cover;">
+          </div>
+          <div class="carousel-item">
+              <img src="img/Chorale5.jpg" class="d-block w-100 img-fluid" alt="..." style="height: 400px; object-fit: cover;">
+          </div>
+          <div class="carousel-item">
+              <img src="img/Chorale6.jpg" class="d-block w-100 img-fluid" alt="..." style="height: 400px; object-fit: cover;">
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+
+
+      <div
+        class="card-deck"
+        style="
+          display: flex;
+          justify-content: space-between;
+          margin-top: 40px;
+        "
+      >
+      <div class="card" style="flex: 1">
+        <div class="container mt-5 mb-3">
+          <img src="img/Chorale4.jpg" class="card-img-top img-fluid" alt="..." style="height: 300px;" />
+          <div class="card-body">
+            <h5 class="card-title">CHRISTMAS EXTRAVAGANZA SA PURISIMA</h5>
+             <class="card-text"> <p><b>
+              The CPC Chorale cordially invites you to an extraordinary musical event! Immerse yourself in the magic of the season at our "Christmas Extravaganza Sa Purisima”, a CPC Diamond Jubilee Finale Concert!
+            </b> </p>
+            <a href="https://www.facebook.com/ColegioDeLaPurisimaConcepcionGrandChorale/videos/296149846739717" class="btn btn-primary">Read more</a>
+          </div>
+        </div>
+      </div>
+        <div class="card" style="flex: 1">
+          <div class="container mt-5 mb-3">
+            <img src="img/Chorale5.jpg" class="card-img-top img-fluid" alt="..." style="height: 300px;" />
+            <div class="card-body">
+              <h5 class="card-title">A MAGICAL NIGHT AT THE DREAMLAND</h5>
+               <class="card-text"> <p> <b>
+                What an incredible honor it was for the CPC Chorale to be part of the breathtaking Opening of Lights at the Sapian Dreamland 2023! 
+</b> </p> 
+              <a href="https://m.facebook.com/story.php?story_fbid=pfbid029LraKFeXAs96zorta1P7qyRaz9oKSJe4qhrx3qDJyyPvT4GbCFU1AYD2KE4CibPl&id=100063455569685&mibextid=Nif5oz" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="flex: 1">
+          <div class="container mt-5 mb-3">
+            <img src="img/Chorale6.jpg" class="card-img-top img-fluid" alt="..." style="height: 300px;" />
+            <div class="card-body">
+              <h5 class="card-title">CONNECTING HEARTS, UNITING VOICES</h5>
+               <class="card-text"> <p> <b>
+                CPC Chorale's team-building activity marks a milestone. We gathered to strengthen our connections because in chorale, heartfelt bonds create the most beautiful melodies.
+              </b> </p>
+              <a href="https://www.facebook.com/story.php?story_fbid=pfbid0FnMLo1AAryL4nptj8KdkGeJwkkRZsrrfdq5dc3h2bvG2WEzWncD41yYiWcuRdQVml&id=100063455569685&mibextid=Nif5oz" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div
+        class="card-deck"
+        style="
+          display: flex;
+          justify-content: space-between;
+          margin-top: 40px;
+        "
+      >
+      <div class="card" style="flex: 1">
+        <div class="container mt-5 mb-3">
+          <img src="img/Maragtas.jpg" class="card-img-top img-fluid" alt="..." style="height: 300px;" />
+          <div class="card-body">
+            <h5 class="card-title">MARAGTAS</h5>
+            <p class="card-text">
+              𝐆𝐞𝐭 𝐫𝐞𝐚𝐝𝐲 𝐭𝐨 𝘄𝗶𝘁𝗻𝗲𝘀𝘀 𝐭𝐡𝐞 𝐫𝐢𝐜𝐡 𝐜𝐮𝐥𝐭𝐮𝐫𝐞 𝐚𝐧𝐝 𝐡𝐞𝐫𝐢𝐭𝐚𝐠𝐞 𝐨𝐟 𝘁𝗵𝗲 𝗣𝗿𝗼𝘃𝗶𝗻𝗰𝗲 𝗼𝗳 𝐂𝐚𝐩𝐢𝐳 𝐚𝐭 𝐭𝐡𝐞 𝐆𝐚𝐛-𝐢 𝐬𝐚𝐧𝐠 𝐌𝐚𝐫𝐚𝐠𝐭𝐚𝐬 𝐂𝐮𝐥𝐭𝐮𝐫𝐚𝐥 𝐒𝐡𝐨𝐰 𝗵𝗲𝗹𝗱 𝗶𝗻 𝗰𝗲𝗹𝗲𝗯𝗿𝗮𝘁𝗶𝗼𝗻 𝗼𝗳 𝘁𝗵𝗲 𝐁𝐮𝐲𝐥𝐨𝐠𝐚𝐧𝐚𝐲 𝐅𝐞𝐬𝐭𝐢𝐯𝐚𝐥 𝟐𝟎𝟐𝟑!
+            </p>
+            <a href="https://www.facebook.com/ColegioDeLaPurisimaConcepcionGrandChorale/posts/pfbid02nz55nByMSfgbwuQCedfmtN2ny78pBJKRAbQuZyFc31pL1zsgABr7AGCVxzi5Gph2l" class="btn btn-primary">Read more</a>
+          </div>
+        </div>
+      </div>
+        <div class="card" style="flex: 1">
+          <div class="container mt-5 mb-3">
+            <img src="img/Recruit.jpg" class="card-img-top img-fluid" alt="..." style="height: 300px;" />
+            <div class="card-body">
+              <h5 class="card-title">CHORALE AUDITIONS</h5>
+               <class="card-text"> <p> <b>
+                Calling all aspiring vocal talents! 
+ CPC Chorale Auditions Are Now Open!
+</b> </p> 
+              <a href="https://www.facebook.com/ColegioDeLaPurisimaConcepcionGrandChorale/posts/pfbid0HDngh5R5yWcW1P9UzZbhfbYE8Ff3NdJ6hvfwpkjWTE9AMzsxXoYk855LVW7CLWdjl" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="flex: 1">
+          <div class="container mt-5 mb-3">
+            <img src="img/Sing.jpg" class="card-img-top img-fluid" alt="..." style="height: 300px;" />
+            <div class="card-body">
+              <h5 class="card-title">KAADLAWAN CULTURAL SHOW</h5>
+               <class="card-text"> <p> <b>
+                Exploring the beauty and complexity of life
+              </b> </p>
+              <a href="https://www.facebook.com/ColegioDeLaPurisimaConcepcionGrandChorale/posts/pfbid0HHcP6AqCUEKwBYdPsDv4P1cGuHay87LLQgBiLJux7con2SGhzjpDPYicR3r289pjl" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+  </body>
+</html>
